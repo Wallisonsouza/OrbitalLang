@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+
+    "include": [
+       "handlers/**/*",
+       "token/**/*"
+    ]
+}

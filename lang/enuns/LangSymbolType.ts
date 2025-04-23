@@ -1,0 +1,20 @@
+export const enum LangSymbolType {
+    PAREN_OPEN = "PAREN_OPEN",
+    PAREN_CLOSE = "PAREN_CLOSE",
+    BRACE_OPEN = "BRACE_OPEN",
+    BRACE_CLOSE = "BRACE_CLOSE",
+    COMMA = "COMMA",
+    SEMICOLON = "SEMICOLON",
+    COLON = "COLON",
+    DOT = "DOT",
+    PLUS_SIGN = "PLUS_SIGN",
+    MINUS_SIGN = "MINUS_SIGN",
+    EQUALS = "EQUALS",
+    LESS_THAN = "LESS_THAN",
+    GREATER_THAN = "GREATER_THAN",
+    MULTIPLY_SIGN = "MULTIPLY_SIGN",
+    DIVIDE_SIGN = "DIVIDE_SIGN",
+    AND = "AND",
+    OR = "OR",
+    NOT = "NOT"
+}

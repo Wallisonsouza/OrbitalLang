@@ -1,8 +1,8 @@
-import CodeData from "../lang/data/data_code.ts";
-import { LangKeywordType } from "../lang/enuns/LangKeywordType.ts";
-import { LangLayer } from "../lang/enuns/LangLayer.ts";
-import LangKeyWord from "../lang/token/lang_keyword.ts";
-import LangToken from "../lang/token/lang_token.ts";
+import CodeData from "../core/data/CodeData.ts";
+import { LangKeywordType } from "../core/enuns/LangKeywordType.ts";
+import { LangLayer } from "../core/enuns/LangLayer.ts";
+import LangKeyWord from "../core/token/LangKeyWord.ts";
+import LangToken from "../core/token/LangToken.ts";
 
 export default function initializeOrbitalKeywords() {
     

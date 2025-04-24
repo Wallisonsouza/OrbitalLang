@@ -1,11 +1,11 @@
-import { IPreToken } from "../token/lang_token.ts";
+import IUnprocessedToken from "../interfaces/IUnprocessedToken.ts";
 
-export class TokenData {
-    private tokens: IPreToken[];
+export default class TokenData {
+    private tokens: IUnprocessedToken[];
     private index: number = 0;
     private indexStack: number[] = [];
 
-    constructor(tokens: IPreToken[]) {
+    constructor(tokens: IUnprocessedToken[]) {
         this.tokens = tokens;
     }
 
@@ -13,16 +13,16 @@ export class TokenData {
         return this.index < this.tokens.length;
     }
 
-    public get current(): IPreToken | null {
+    public get current(): IUnprocessedToken | null {
         return this.hasMore ? this.tokens[this.index] : null;
     }
 
-    public peek(offset: number = 1): IPreToken | null {
+    public peek(offset: number = 1): IUnprocessedToken | null {
         const nextIndex = this.index + offset;
         return nextIndex < this.tokens.length ? this.tokens[nextIndex] : null;
     }
 
-    public get previous(): IPreToken | null{
+    public get previous(): IUnprocessedToken | null{
         return this.index > 0 ? this.tokens[this.index - 1] : null;
     }
 

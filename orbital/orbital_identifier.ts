@@ -1,6 +1,6 @@
-import CodeData from "../lang/data/data_code.ts";
-import { LangLayer } from "../lang/enuns/LangLayer.ts";
-import LangToken from "../lang/token/lang_token.ts";
+import CodeData from "../core/data/CodeData.ts";
+import { LangLayer } from "../core/enuns/LangLayer.ts";
+import LangToken from "../core/token/LangToken.ts";
 
 export default function initializeOrbitalIdentifiers() {
 

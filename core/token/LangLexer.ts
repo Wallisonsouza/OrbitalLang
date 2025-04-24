@@ -1,6 +1,8 @@
-import { CodeData } from "./data/data_code.ts";
-import { TokenData } from "./data/data_token.ts";
-import LangToken, { IPreToken } from "./token/lang_token.ts";
+import CodeData from "../data/CodeData.ts";
+import TokenData from "../data/TokenData.ts";
+import IProcessedToken from "../interfaces/IProcessedToken.ts";
+import IUnprocessedToken from "../interfaces/IUnprocessedToken.ts";
+import LangToken from "./LangToken.ts";
 
 export default class LangLexer {
     code: CodeData;
@@ -10,7 +12,7 @@ export default class LangLexer {
     }
 
     public tokenize() {
-        const tokens: IPreToken[] = [];
+        const tokens: IUnprocessedToken[] = [];
 
         while (this.code.hasMore) {
             this.code.skipWhitespace();
@@ -40,7 +42,7 @@ export default class LangLexer {
         }
 
         const stream = new TokenData(tokens);
-        const finalTokens: any[] = [];
+        const finalTokens: IProcessedToken[] = [];
 
         while (stream.hasMore) {
             const token = stream.current;

@@ -7,7 +7,7 @@
     ],
 
     "include": [
-       "handlers/**/*",
+       "core/**/*",
        "token/**/*"
     ]
 }

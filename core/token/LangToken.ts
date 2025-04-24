@@ -1,22 +1,11 @@
-import CodeData from "../data/data_code.ts";
-import { TokenData } from "../data/data_token.ts";
+import CodeData from "../data/CodeData.ts";
+import TokenData from "../data/TokenData.ts";
 import { LangLayer } from "../enuns/LangLayer.ts";
+import IProcessedToken from "../interfaces/IProcessedToken.ts";
+import IUnprocessedToken from "../interfaces/IUnprocessedToken.ts";
 
-
-type TokenHandler = (data: CodeData) => IPreToken | null;
-type NormalizeTokenHandler = (token: IPreToken, data: TokenData) => IToken | null;
-
-
-export interface IPreToken {
-    value: string;
-    type: string;
-    start: number;
-    end: number;
-}
-
-export interface IToken extends IPreToken {
-    subType: string;
-}
+type TokenHandler = (data: CodeData) => IUnprocessedToken | null;
+type NormalizeTokenHandler = (token: IUnprocessedToken, data: TokenData) => IProcessedToken | null;
 
 class LangToken {
     private static tokenLayers: Map<number, [string, TokenHandler][]> = new Map();

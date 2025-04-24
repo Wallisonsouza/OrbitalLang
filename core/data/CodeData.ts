@@ -1,4 +1,4 @@
-export class CodeData {
+export default class CodeData {
     chars: string;
     index: number;
     private indexStack: number[] = [];
@@ -61,5 +61,3 @@ export class CodeData {
         }
     }
 }
-
-export default CodeData;

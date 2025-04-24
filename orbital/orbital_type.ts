@@ -1,8 +1,8 @@
-import CodeData from "../lang/data/data_code.ts";
-import { LangLayer } from "../lang/enuns/LangLayer.ts";
-import { LangPrimitiveType } from "../lang/enuns/LangPrimitiveType.ts";
-import LangToken from "../lang/token/lang_token.ts";
-import LangPrimitive from "../lang/token/lang_types.ts";
+import CodeData from "../core/data/CodeData.ts";
+import { LangLayer } from "../core/enuns/LangLayer.ts";
+import { LangPrimitiveType } from "../core/enuns/LangPrimitiveType.ts";
+import LangPrimitive from "../core/token/LangPrimitive.ts";
+import LangToken from "../core/token/LangToken.ts";
 
 export function initializeOrbitalTypes() {
 

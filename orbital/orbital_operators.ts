@@ -1,8 +1,4 @@
-import CodeData from "../lang/data/data_code.ts";
-import { LangLayer } from "../lang/enuns/LangLayer.ts";
-import { LangOperatorType } from "../lang/enuns/LangOperatorType.ts";
-import LangOperator from "../lang/token/lang_operator.ts";
-import LangToken from "../lang/token/lang_token.ts";
+
 
 export function initializeOrbitalOperators() {
 

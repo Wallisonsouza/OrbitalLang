@@ -1,8 +1,8 @@
-import CodeData from "../lang/data/data_code.ts";
-import { LangLayer } from "../lang/enuns/LangLayer.ts";
-import { LangSymbolType } from "../lang/enuns/LangSymbolType.ts";
-import LangSymbol from "../lang/token/lang_symbol.ts";
-import LangToken from "../lang/token/lang_token.ts";
+import CodeData from "../core/data/CodeData.ts";
+import { LangLayer } from "../core/enuns/LangLayer.ts";
+import { LangSymbolType } from "../core/enuns/LangSymbolType.ts";
+import LangSymbol from "../core/token/LangSymbol.ts";
+import LangToken from "../core/token/LangToken.ts";
 
 export function initializeOrbitalSymbols() {
 

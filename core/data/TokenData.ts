@@ -1,11 +1,11 @@
 import IUnprocessedToken from "../interfaces/IUnprocessedToken.ts";
+import Stack from "./Stack.ts";
 
-export default class TokenData {
+export default class TokenData extends Stack {
     private tokens: IUnprocessedToken[];
-    private index: number = 0;
-    private indexStack: number[] = [];
 
     constructor(tokens: IUnprocessedToken[]) {
+        super();
         this.tokens = tokens;
     }
 
@@ -29,23 +29,6 @@ export default class TokenData {
     public advance(): void {
         if (this.hasMore) {
             this.index++;
-        }
-    }
-
-    // --- Checkpoint System ---
-    public mark(): void {
-        this.indexStack.push(this.index);
-    }
-
-    public revert(): void {
-        if (this.indexStack.length > 0) {
-            this.index = this.indexStack.pop()!;
-        }
-    }
-
-    public confirm(): void {
-        if (this.indexStack.length > 0) {
-            this.indexStack.pop();
         }
     }
 }

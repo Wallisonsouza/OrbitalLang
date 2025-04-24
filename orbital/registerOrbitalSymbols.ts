@@ -4,7 +4,7 @@ import { LangSymbolType } from "../core/enuns/LangSymbolType.ts";
 import LangSymbol from "../core/token/LangSymbol.ts";
 import LangToken from "../core/token/LangToken.ts";
 
-export function initializeOrbitalSymbols() {
+export default function registerOrbitalSymbols() {
 
     LangSymbol.addSymbol("(",  LangSymbolType.PAREN_OPEN);
     LangSymbol.addSymbol(")", LangSymbolType.PAREN_CLOSE);

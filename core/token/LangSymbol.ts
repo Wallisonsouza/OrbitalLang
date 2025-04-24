@@ -1,3 +1,4 @@
+import LangOptions from "../../LangOptions.ts";
 import { LangSymbolType } from "../enuns/LangSymbolType.ts";
 
 export default class LangSymbol {
@@ -12,11 +13,15 @@ export default class LangSymbol {
     }
 
     public static addSymbol(symbol: string, type: LangSymbolType): void {
-        if (!this.isSymbol(symbol)) {
-            this.simbols.set(symbol, type);
-            console.log(`Símbolo "${symbol}" adicionado com sucesso.`);
-        } else {
+        if (this.isSymbol(symbol)) {
             console.warn(`O símbolo "${symbol}" já está registrado.`);
+            return;
+        } 
+
+        this.simbols.set(symbol, type);
+
+        if(LangOptions.debugMode) {
+            console.log(`Símbolo "${symbol}" adicionado com sucesso.`);
         }
     }
 }

@@ -4,7 +4,7 @@ import { LangLayer } from "../core/enuns/LangLayer.ts";
 import LangKeyWord from "../core/token/LangKeyWord.ts";
 import LangToken from "../core/token/LangToken.ts";
 
-export default function initializeOrbitalKeywords() {
+export default function registerOrbitalKeywords() {
     
     LangKeyWord.addKeyword("const", LangKeywordType.CONSTANT_DECLARATION);
     LangKeyWord.addKeyword("return", LangKeywordType.CONTROL_FLOW);

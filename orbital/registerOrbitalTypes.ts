@@ -4,7 +4,7 @@ import { LangPrimitiveType } from "../core/enuns/LangPrimitiveType.ts";
 import LangPrimitive from "../core/token/LangPrimitive.ts";
 import LangToken from "../core/token/LangToken.ts";
 
-export function initializeOrbitalTypes() {
+export default function registerOrbitalTypes() {
 
     LangPrimitive.addPrimitive("int", LangPrimitiveType.NUMBER);
     LangPrimitive.addPrimitive("str", LangPrimitiveType.STRING);

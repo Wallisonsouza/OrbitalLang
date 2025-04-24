@@ -1,3 +1,4 @@
+import LangOptions from "../../LangOptions.ts";
 import { LangOperatorType } from "../enuns/LangOperatorType.ts";
 
 export default class LangOperator {
@@ -8,11 +9,16 @@ export default class LangOperator {
     }
 
     public static addOperator(symbol: string, type: LangOperatorType): void {
-        if (!this.isOperator(symbol)) {
-            this.operators.set(symbol, type);
-            console.log(`Operador "${symbol}" adicionado com sucesso.`);
-        } else {
+        
+        if (this.isOperator(symbol)) {
             console.warn(`O operador "${symbol}" já está registrado.`);
+            return;
+        }
+       
+        this.operators.set(symbol, type);
+
+        if(LangOptions.debugMode) {
+            console.log(`Operador "${symbol}" adicionado com sucesso.`);
         }
     }
 

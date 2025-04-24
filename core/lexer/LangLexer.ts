@@ -2,7 +2,7 @@ import CodeData from "../data/CodeData.ts";
 import TokenData from "../data/TokenData.ts";
 import IProcessedToken from "../interfaces/IProcessedToken.ts";
 import IUnprocessedToken from "../interfaces/IUnprocessedToken.ts";
-import LangToken from "./LangToken.ts";
+import LangToken from "../token/LangToken.ts";
 
 export default class LangLexer {
     code: CodeData;
@@ -12,7 +12,7 @@ export default class LangLexer {
     }
 
     public tokenize() {
-        const tokens: IUnprocessedToken[] = [];
+        const unprocessedTokens: IUnprocessedToken[] = [];
 
         while (this.code.hasMore) {
             this.code.skipWhitespace();
@@ -28,7 +28,7 @@ export default class LangLexer {
                 for (const [_, handler] of handlers) {
                     const result = handler(this.code);
                     if (result) {
-                        tokens.push(result);
+                        unprocessedTokens.push(result);
                         matched = true;
                         break;
                     }
@@ -41,21 +41,21 @@ export default class LangLexer {
             }
         }
 
-        const stream = new TokenData(tokens);
-        const finalTokens: IProcessedToken[] = [];
+        const stream = new TokenData(unprocessedTokens);
+        const processedTokens: IProcessedToken[] = [];
 
         while (stream.hasMore) {
             const token = stream.current;
             if (token) {
                 const normalizer = LangToken.getNormalizer(token.type);
 
-                const refined = normalizer ? normalizer(token, stream) : token;
+                const processed = normalizer ? normalizer(token, stream) : token;
 
-                finalTokens.push(refined);
+                processedTokens.push(processed);
                 stream.advance();
             }
         }
 
-        return finalTokens;
+        return processedTokens;
     }
 }
